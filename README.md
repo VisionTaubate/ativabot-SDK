@@ -5,6 +5,9 @@
 
 SDK Oficial em PHP para integração com a API Externa do **AtivaBot CRM**. Permite enviar mensagens de texto e mídia via WhatsApp, gerenciar contatos, grupos, templates WABA e receber webhooks com suporte nativo a PHP puro e Laravel.
 
+- 🌐 **Site Oficial:** [https://ativabot.com.br](https://ativabot.com.br)
+- 👤 **Área do Usuário:** [https://app.ativabot.com.br](https://app.ativabot.com.br)
+
 ---
 
 ## 🚀 Instalação
@@ -14,6 +17,24 @@ Instale o pacote via Composer:
 ```bash
 composer require ativabot/php-sdk
 ```
+
+---
+
+## 🔑 Como Obter suas Credenciais (API ID e Token)
+
+Para utilizar o SDK, você precisará do **API ID** e do **Token (JWT)** gerados no painel do **AtivaBot CRM**:
+
+1. Acesse o painel do **AtivaBot CRM** ([https://app.ativabot.com.br](https://app.ativabot.com.br)).
+2. No menu lateral esquerdo, acesse **Sistema** ➔ **API** (ou vá diretamente para `/api-service`).
+3. Clique no botão **"Adicionar"** no canto superior direito.
+4. Preencha as informações da integração:
+   - **Nome da API**: Um nome para identificar seu sistema (ex.: `Meu Sistema PHP`, `E-commerce`).
+   - **Enviar por**: Selecione a conexão de WhatsApp padrão que realizará os disparos.
+   - **WebHook** *(Opcional)*: Caso queira receber notificações de eventos (mensagens recebidas, status de entrega, contatos, etc.), preencha a URL do seu Webhook e selecione os eventos desejados.
+5. Clique em **Salvar**.
+6. Na lista de integrações cadastradas (ou ao abrir a edição da API), copie facilmente as duas credenciais:
+   - **API ID**: Clique no botão de copiar (ícone 📋) no campo **API ID** (ou no cabeçalho do card).
+   - **Token (JWT)**: Clique no botão de copiar (ícone 📋) no campo **Token (JWT)**.
 
 ---
 
