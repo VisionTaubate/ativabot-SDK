@@ -1,0 +1,42 @@
+{
+    "name": "ativabot/php-sdk",
+    "description": "SDK oficial em PHP para integração com a API Externa do AtivaBot CRM",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["ativabot", "crm", "whatsapp", "sdk", "laravel", "api", "waba"],
+    "authors": [
+        {
+            "name": "Equipe AtivaBot",
+            "email": "suporte@ativabot.com"
+        }
+    ],
+    "require": {
+        "php": "^7.4 || ^8.0 || ^8.1 || ^8.2 || ^8.3",
+        "guzzlehttp/guzzle": "^7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5 || ^10.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "AtivaBot\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "AtivaBot\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "AtivaBot\\Laravel\\AtivaBotServiceProvider"
+            ],
+            "aliases": {
+                "AtivaBot": "AtivaBot\\Laravel\\Facades\\AtivaBot"
+            }
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
