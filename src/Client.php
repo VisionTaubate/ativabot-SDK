@@ -38,9 +38,9 @@ class Client
         ]);
     }
 
-    public static function create(string $baseUrl, string $apiId, string $jwtToken, int $timeout = 30): self
+    public static function create(string $apiId, string $jwtToken, int $timeout = 30, ?string $baseUrl = null): self
     {
-        $config = new Config($baseUrl, $apiId, $jwtToken, $timeout);
+        $config = new Config($apiId, $jwtToken, $timeout, $baseUrl);
         return new self($config);
     }
 

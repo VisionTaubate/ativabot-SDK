@@ -30,7 +30,6 @@ php artisan vendor:publish --tag="ativabot-config"
 Em seguida, adicione suas credenciais no arquivo `.env`:
 
 ```env
-ATIVABOT_BASE_URL=https://api.seudominio.com
 ATIVABOT_API_ID=seu-api-id-uuid
 ATIVABOT_JWT_TOKEN=seu-jwt-token-aqui
 ```
@@ -43,7 +42,6 @@ ATIVABOT_JWT_TOKEN=seu-jwt-token-aqui
 use AtivaBot\Client;
 
 $client = Client::create(
-    'https://api.seudominio.com',
     'seu-api-id-uuid',
     'seu-jwt-token'
 );

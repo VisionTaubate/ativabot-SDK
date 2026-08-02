@@ -29,10 +29,10 @@ class AtivaBotServiceProvider extends ServiceProvider
 
         $this->app->singleton(Client::class, function ($app) {
             $config = new Config(
-                $app['config']->get('ativabot.base_url', ''),
-                $app['config']->get('ativabot.api_id', ''),
-                $app['config']->get('ativabot.jwt_token', ''),
-                (int) $app['config']->get('ativabot.timeout', 30)
+                (string) $app['config']->get('ativabot.api_id', ''),
+                (string) $app['config']->get('ativabot.jwt_token', ''),
+                (int) $app['config']->get('ativabot.timeout', 30),
+                $app['config']->get('ativabot.base_url')
             );
 
             return new Client($config);

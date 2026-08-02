@@ -7,13 +7,12 @@ use AtivaBot\Exceptions\ApiException;
 use AtivaBot\Exceptions\AtivaBotException;
 
 // Configuração das credenciais geradas no painel do CRM
-$baseUrl  = 'https://api.seudominio.com';
 $apiId    = '999ab3a2-9f1f-4ffb-969a-bfb72234ece1';
 $jwtToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...';
 
 try {
-    // Inicialização do cliente
-    $client = Client::create($baseUrl, $apiId, $jwtToken);
+    // Inicialização do cliente (URL padrão https://api.ativabot.com.br usada automaticamente)
+    $client = Client::create($apiId, $jwtToken);
 
     // 1. Enviar Mensagem de Texto
     echo "Enviando mensagem de texto...\n";

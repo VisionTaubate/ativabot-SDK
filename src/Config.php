@@ -6,18 +6,15 @@ use AtivaBot\Exceptions\ValidationException;
 
 class Config
 {
+    public const DEFAULT_BASE_URL = 'https://api.ativabot.com.br';
+
     private string $baseUrl;
     private string $apiId;
     private string $jwtToken;
     private int $timeout;
 
-    public function __construct(string $baseUrl, string $apiId, string $jwtToken, int $timeout = 30)
+    public function __construct(string $apiId, string $jwtToken, int $timeout = 30, ?string $baseUrl = null)
     {
-        $baseUrl = rtrim(trim($baseUrl), '/');
-        if (empty($baseUrl)) {
-            throw new ValidationException('O parâmetro baseUrl não pode ser vazio.');
-        }
-
         if (empty($apiId)) {
             throw new ValidationException('O parâmetro apiId não pode ser vazio.');
         }
@@ -26,10 +23,10 @@ class Config
             throw new ValidationException('O parâmetro jwtToken não pode ser vazio.');
         }
 
-        $this->baseUrl = $baseUrl;
         $this->apiId = $apiId;
         $this->jwtToken = $jwtToken;
         $this->timeout = $timeout;
+        $this->baseUrl = !empty($baseUrl) ? rtrim(trim($baseUrl), '/') : self::DEFAULT_BASE_URL;
     }
 
     public function getBaseUrl(): string
