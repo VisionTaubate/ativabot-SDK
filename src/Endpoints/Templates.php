@@ -76,7 +76,7 @@ class Templates extends AbstractEndpoint
     /**
      * Envia uma mensagem baseada em um template aprovado.
      *
-     * @param array $payload Ex: ['to' => '5511999999999', 'templateName' => 'boas_vindas', 'language' => 'pt_BR', 'components' => [...]]
+     * @param array $payload Ex: ['to' => '5511999999999', 'templateId' => 42, 'language' => 'pt_BR', 'components' => [...]]
      * @return array Resposta de enfileiramento do template
      * @throws ValidationException
      */
@@ -85,8 +85,8 @@ class Templates extends AbstractEndpoint
         if (empty($payload['to'])) {
             throw new ValidationException('O campo to (destinatário) é obrigatório.');
         }
-        if (empty($payload['templateName'])) {
-            throw new ValidationException('O campo templateName é obrigatório.');
+        if (empty($payload['templateId']) && empty($payload['templateName'])) {
+            throw new ValidationException('O campo templateId ou templateName é obrigatório.');
         }
 
         return $this->client->request('POST', '/v1/api/external/:apiId/templates/send', [

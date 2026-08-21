@@ -41,7 +41,7 @@ class AtivaBotNotificationController extends Controller
     {
         $response = AtivaBot::templates()->send([
             'to'           => $request->input('phone'),
-            'templateName' => 'codigo_verificacao',
+            'templateId'   => 42,
             'language'     => 'pt_BR',
             'components'   => [
                 [

@@ -102,7 +102,7 @@ AtivaBot::contacts()->create([
 // Enviar template aprovado
 AtivaBot::templates()->send([
     'to'           => '5511999999999',
-    'templateName' => 'boas_vindas',
+    'templateId'   => 42,
     'language'     => 'pt_BR'
 ]);
 ```
